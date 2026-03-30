@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="《重生闪婚：驯服年下盟友》- 一部关于重生复仇与爱情救赎的都市言情小说。林薇重生归来，与江澈闪婚结盟，联手揭露阴谋，在复仇中找到真爱。">
+  <meta name="keywords" content="重生小说,闪婚,言情小说,都市小说,在线阅读">
+  <title>重生闪婚：驯服年下盟友 | 在线阅读</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+</head>
+<body>
+  <!-- 页面加载动画 -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-text">正在翻开书页...</div>
+    </div>
+  </div>
+
+  <!-- 阅读进度条 -->
+  <div id="reading-progress"></div>
+
+  <!-- ========== 封面页 ========== -->
+  <div class="cover-page" id="coverPage">
+    <div class="cover-particles" id="particles"></div>
+    <div class="cover-content">
+      <span class="cover-badge">📖 都市言情 · 重生复仇 · 30章完结</span>
+      <h1 class="cover-title">
+        重生闪婚<br><span class="highlight">驯服年下盟友</span>
+      </h1>
+      <p class="cover-subtitle">前世的遗憾，今生用爱来偿还</p>
+      <div class="cover-meta">
+        <span class="cover-meta-item"><span class="icon">✍️</span> 原创小说</span>
+        <span class="cover-meta-item"><span class="icon">📑</span> 30章完结</span>
+        <span class="cover-meta-item"><span class="icon">💕</span> 闪婚 · 强强 · HE</span>
+      </div>
+      <div class="cover-divider"></div>
+      <p class="cover-synopsis">
+        前世，林薇被赵峰设计谋害，失去一切。<br>
+        重生归来，她带着前世记忆，以收购为筹码与仇人的堂弟江澈闪婚结盟。<br>
+        一场关于复仇、权谋与救赎的博弈就此展开——<br>
+        当仇恨渐渐被温柔融化，她发现最好的复仇，是活得比谁都幸福。
+      </p>
+      <a class="cover-cta" href="#chapter-1" onclick="startReading()">
+        开始阅读 <span class="arrow">→</span>
+      </a>
+    </div>
+    <div class="cover-scroll-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+    </div>
+  </div>
+
+  <!-- ========== 顶部导航 ========== -->
+  <nav class="top-nav" id="topNav">
+    <div class="nav-left">
+      <button class="nav-menu-btn" id="menuBtn" onclick="toggleSidebar()" aria-label="打开目录">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <span class="nav-title">重生闪婚<span class="nav-chapter" id="navChapter">第1章</span></span>
+    </div>
+    <div class="nav-right">
+      <button class="nav-btn desktop-only" onclick="changeFontSize()" id="fontSizeBtn" title="字体大小">字</button>
+      <button class="nav-btn" onclick="toggleTheme()" id="themeBtn" title="切换主题">🌙</button>
+    </div>
+  </nav>
+
+  <!-- ========== 侧边目录 ========== -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+  <aside class="sidebar" id="sidebar">
+    <button class="sidebar-close" onclick="toggleSidebar()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="sidebar-header">
+      <div class="sidebar-book-title">重生闪婚：驯服年下盟友</div>
+      <div class="sidebar-book-author">全30章 · 完结</div>
+    </div>
+    <div class="sidebar-chapters" id="sidebarChapters">
+      <div class="chapter-item" data-target="chapter-1" onclick="navigateToChapter(1)">
+        <span class="chapter-num">01</span>
+        <span class="chapter-name">午夜来客</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-2" onclick="navigateToChapter(2)">
+        <span class="chapter-num">02</span>
+        <span class="chapter-name">正面交锋</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-3" onclick="navigateToChapter(3)">
+        <span class="chapter-num">03</span>
+        <span class="chapter-name">咖啡馆的威胁</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-4" onclick="navigateToChapter(4)">
+        <span class="chapter-num">04</span>
+        <span class="chapter-name">前世的遗憾</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-5" onclick="navigateToChapter(5)">
+        <span class="chapter-num">05</span>
+        <span class="chapter-name">证据之战</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-6" onclick="navigateToChapter(6)">
+        <span class="chapter-num">06</span>
+        <span class="chapter-name">步步紧逼</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-7" onclick="navigateToChapter(7)">
+        <span class="chapter-num">07</span>
+        <span class="chapter-name">心动的萌芽</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-8" onclick="navigateToChapter(8)">
+        <span class="chapter-num">08</span>
+        <span class="chapter-name">董事会风云</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-9" onclick="navigateToChapter(9)">
+        <span class="chapter-num">09</span>
+        <span class="chapter-name">疯狂的报复</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-10" onclick="navigateToChapter(10)">
+        <span class="chapter-num">10</span>
+        <span class="chapter-name">复仇终章</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-11" onclick="navigateToChapter(11)">
+        <span class="chapter-num">11</span>
+        <span class="chapter-name">迟来的忏悔</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-12" onclick="navigateToChapter(12)">
+        <span class="chapter-num">12</span>
+        <span class="chapter-name">最后的疯狂</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-13" onclick="navigateToChapter(13)">
+        <span class="chapter-num">13</span>
+        <span class="chapter-name">劫后余温</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-14" onclick="navigateToChapter(14)">
+        <span class="chapter-num">14</span>
+        <span class="chapter-name">跨越时空的婚纱照</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-15" onclick="navigateToChapter(15)">
+        <span class="chapter-num">15</span>
+        <span class="chapter-name">街头偶遇</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-16" onclick="navigateToChapter(16)">
+        <span class="chapter-num">16</span>
+        <span class="chapter-name">白纱之约</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-17" onclick="navigateToChapter(17)">
+        <span class="chapter-num">17</span>
+        <span class="chapter-name">最后一面</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-18" onclick="navigateToChapter(18)">
+        <span class="chapter-num">18</span>
+        <span class="chapter-name">释怀</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-19" onclick="navigateToChapter(19)">
+        <span class="chapter-num">19</span>
+        <span class="chapter-name">意外的访客</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-20" onclick="navigateToChapter(20)">
+        <span class="chapter-num">20</span>
+        <span class="chapter-name">星辰新篇</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-21" onclick="navigateToChapter(21)">
+        <span class="chapter-num">21</span>
+        <span class="chapter-name">冰释前嫌</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-22" onclick="navigateToChapter(22)">
+        <span class="chapter-num">22</span>
+        <span class="chapter-name">前世的真相</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-23" onclick="navigateToChapter(23)">
+        <span class="chapter-num">23</span>
+        <span class="chapter-name">婚礼前夕</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-24" onclick="navigateToChapter(24)">
+        <span class="chapter-num">24</span>
+        <span class="chapter-name">温暖的祝福</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-25" onclick="navigateToChapter(25)">
+        <span class="chapter-num">25</span>
+        <span class="chapter-name">新的启程</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-26" onclick="navigateToChapter(26)">
+        <span class="chapter-num">26</span>
+        <span class="chapter-name">敬所有来得及的人</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-27" onclick="navigateToChapter(27)">
+        <span class="chapter-num">27</span>
+        <span class="chapter-name">好消息</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-28" onclick="navigateToChapter(28)">
+        <span class="chapter-num">28</span>
+        <span class="chapter-name">归来</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-29" onclick="navigateToChapter(29)">
+        <span class="chapter-num">29</span>
+        <span class="chapter-name">幸福的延续</span>
+      </div>
+      <div class="chapter-item" data-target="chapter-30" onclick="navigateToChapter(30)">
+        <span class="chapter-num">30</span>
+        <span class="chapter-name">阳光正好</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========== 主阅读区域 ========== -->
+  <main class="reading-area" id="readingArea">
+<section class="chapter-section fade-in" id="chapter-1" data-chapter="1">
+  <div class="chapter-header">
+    <span class="chapter-number">第1章</span>
+    <h2 class="chapter-title">午夜来客</h2>
+    <p class="chapter-scene">📍 出租屋（ ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>窗外的霓虹灯光透过轻纱窗帘，在狭小的出租屋里投下斑驳的光影。</p>
+    <p>江睡在床上，画外音，江撤救救我，一头冷汗，突然惊醒，看了看手机，手机上是凌晨3点多，忽然，客厅的东西倒塌，走过去发现自己的猫叫了，忽然一个女声响起</p>
+    <p class="dialogue">“睡眠还是这么浅啊”</p>
+    <p class="dialogue">江澈打开灯："你是赵峰的人？你到底想干什么？"</p>
+    <p class="dialogue">林薇接过书放到书架上，开口道："我是谁不重要，重要的是，你想夺回公司，就得听我的。"</p>
+    <p class="dialogue">江澈攥住她手腕："听你的？你知道我和赵峰的恩怨有多深吗？他不仅抢了我的公司，还害了我最在意的人！"</p>
+    <p class="dialogue">林薇眼神锐利，说道："你在意的人？是那个被推下楼的可怜女子吗？"</p>
+    <p>江澈，别装了，你当初为了自保，眼睁睁看着我落入圈套！</p>
+    <p class="dialogue">江澈瞳孔骤缩："你跟林薇什么关系？"</p>
+    <p class="dialogue">林薇甩开他的手，道："用某种不可理解的方式，上天给了我又一次机会"</p>
+    <p class="dialogue">（头凑近）现在给你两个选择说："要么嫁给我，做我的“盟友”，一起扳倒赵峰；"</p>
+    <p>要么，等着赵峰彻底吞掉星辰公司，你会一无所有。</p>
+    <p class="dialogue">江澈咬牙，开口道："我嫁给你？林薇，你这是在报复我！"</p>
+    <p class="dialogue">林薇微微挑起眉梢，目光中带着几分玩味："是又怎样？你当初能把我当棋子，现在就该付出代价。敢不敢赌一把？"</p>
+    <p class="dialogue">江澈盯着她的眼睛，说道："有何不敢？但我要知道，你手里到底有多少赵峰的证据。"</p>
+    <p class="dialogue">林薇拿出手机展示资料："我这里有他侵吞公司资金的部分记录，想要更多，就跟我去领证。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-2" data-chapter="2">
+  <div class="chapter-header">
+    <span class="chapter-number">第2章</span>
+    <h2 class="chapter-title">正面交锋</h2>
+    <p class="chapter-scene">📍 星辰公司办公室</p>
+  </div>
+  <div class="chapter-content">
+    <p>办公室里的空调嗡嗡作响，窗外的车流声隐约可闻。会议桌上摊开着厚厚的文件。</p>
+    <p>林薇穿着职业装坐在会客椅上，江澈站在办公桌旁，赵峰推门而入，满脸讥讽。</p>
+    <p class="dialogue">赵峰打量林薇，道："这位就是扬言要收购我公司的林总？倒是有点本事，能说动我这位“前少东家”给你当跟班。"</p>
+    <p class="dialogue">林薇起身，说："赵总说笑了，我和江澈是合作关系，不像你，靠耍阴招夺权。"</p>
+    <p class="dialogue">江澈挡在林薇身前："赵峰，公司是我父亲创立的，你鸠占鹊巢这么久，也该还回来了。"</p>
+    <p class="dialogue">赵峰拍桌大笑，开口道："还回来？江澈，你也不看看自己现在是什么德行，没了公司，你连条狗都不如！当初林薇死的时候，你怎么不敢站出来？"</p>
+    <p class="dialogue">林薇脸色一沉："赵峰，你少提前世的事！今天我来，是要代表董事会财务核查的。"</p>
+    <p class="dialogue">赵峰眼神阴鸷，说道："核查？林薇，你以为你是谁？一个不知从哪里冒出来的野丫头，也配查我的账？"</p>
+    <p class="dialogue">林薇掏出协议合同："我已经和董事会达成初步共识，作为潜在收购方，我有权利核查。你要是阻拦，就是心虚。"</p>
+    <p class="dialogue">江澈补充："我手里有你三年前挪用公款的证据，你觉得董事会看到会是什么反应？"</p>
+    <p class="dialogue">赵峰攥紧拳头，道："你们合起伙来针对我？好！我倒要看看，你们能掀起什么风浪！林薇，你别忘了，当初你可是签了自愿离职协议的，你死了，一分钱也拿不到。"</p>
+    <p class="dialogue">林薇嘴角微微上扬，却没有一丝温度到达眼底，说："那是你伪造的！这一世，我不仅要拿回属于我的一切，还要让你为前世的所作所为付出代价！"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-3" data-chapter="3">
+  <div class="chapter-header">
+    <span class="chapter-number">第3章</span>
+    <h2 class="chapter-title">咖啡馆的威胁</h2>
+    <p class="chapter-scene">📍 街角咖啡馆</p>
+  </div>
+  <div class="chapter-content">
+    <p>傍晚的咖啡馆里，暖黄色的灯光为一切都镀上了一层柔和的光晕。窗外的行人匆匆而过，馆内却是一片宁静。</p>
+    <p>林薇和江澈相对而坐，桌上放着咖啡，赵峰突然坐在邻桌，故意提高音量。</p>
+    <p class="dialogue">赵峰对着电话，开口道："有些人就是不自量力，以为重生了就能逆天改命？当初她像条狗一样求我的时候，我还真以为她有多能耐。"</p>
+    <p class="dialogue">江澈起身欲发作："赵峰，你别太过分！"</p>
+    <p class="dialogue">林薇拉住他，说道："别冲动，我们还有正事要谈。"</p>
+    <p class="dialogue">赵峰挂了电话走过来："正事？是谈怎么分我公司的资产吗？林薇，我劝你识相点，赶紧离开江澈，否则我不保证下一次，你还能这么幸运地“重生”。"</p>
+    <p class="dialogue">林薇抬头直视："赵峰，你吓唬人的手段还是这么低级。前世你能害死我，是因为我信任了你，这一世，我对你只有仇恨。"</p>
+    <p class="dialogue">江澈攥住林薇的手，道："有我在，他动不了你。赵峰，你要是再敢威胁她，我不介意把你所有的丑事都公之于众。"</p>
+    <p class="dialogue">赵峰嗤笑，说："公之于众？江澈，你别忘了，你当初为了自保，可是给我签过免责协议的！林薇，你真以为他是真心帮你？他只是想利用你夺回公司！"</p>
+    <p class="dialogue">林薇眼神微动："我和他是互相利用，总比被你这种小人算计好。倒是你，挪用的资金已经被我们查到流向了海外，你觉得你还能撑多久？"</p>
+    <p class="dialogue">赵峰脸色一变，开口道："你胡说！我看你们是在自欺欺人！等着吧，我会让你们知道，跟我作对的下场！"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-4" data-chapter="4">
+  <div class="chapter-header">
+    <span class="chapter-number">第4章</span>
+    <h2 class="chapter-title">前世的遗憾</h2>
+    <p class="chapter-scene">📍 出租屋（ ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>阳光透过窗帘的缝隙洒进来，出租屋虽然不大，却因为两个人的存在而显得温馨。</p>
+    <p>林薇翻看手机财务文件，江澈坐在一旁，神色复杂。</p>
+    <p class="dialogue">江澈轻声，说道："今天赵峰说的话，你别往心里去。"</p>
+    <p class="dialogue">林薇头也不抬："我没往心里去，我们本就是互相利用，不是吗？"</p>
+    <p class="dialogue">江澈抓住她的手："不是！林薇，前世我没能保护你，是我这辈子最大的遗憾。这一世，我跟你结盟，不只是为了公司，更是为了弥补你。"</p>
+    <p class="dialogue">林薇甩开他，道："弥补？你怎么弥补？我前世的孩子没了，我的人生毁了，这些你都能弥补吗？"</p>
+    <p class="dialogue">江澈眼眶渐渐泛红，有什么东西在眼底翻涌，说："我知道我欠你的太多，所以我愿意嫁给你，听你的差遣，哪怕做你的“  狗”，只要能让你消气，只要能让你平安。"</p>
+    <p class="dialogue">林薇停顿："你以为这样我就会原谅你？江澈，当初你明明知道赵峰的阴谋，却选择沉默，你和他一样自私！"</p>
+    <p class="dialogue">江澈急切，开口道："我没有！我当时被赵峰软禁了，我想救你却无能为力！等我逃出来的时候，你已经……"</p>
+    <p class="dialogue">林薇打断他："够了！现在说这些都没用了。我们的协议是复仇，其他的事，别提。"</p>
+    <p class="dialogue">江澈苦笑，说道："好，不提。但我想告诉你，不管你信不信，这一世，我绝不会再让你受一点伤害。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-5" data-chapter="5">
+  <div class="chapter-header">
+    <span class="chapter-number">第5章</span>
+    <h2 class="chapter-title">证据之战</h2>
+    <p class="chapter-scene">📍 星辰公司办公室（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>星辰公司的落地窗外，城市的天际线在晨光中渐渐清晰。宽敞的办公室里，空气中还残留着清晨的凉意。</p>
+    <p>林薇正在整理证据，赵峰带着一个口罩黑衣人闯进来，一脚踹翻椅子。</p>
+    <p class="dialogue">赵峰面目扭曲，声音几乎是从喉咙深处挤出来的："林薇！你偷偷复印公司财务报表，真当我没发现？"</p>
+    <p class="dialogue">林薇冷静，道："我只是在做我该做的事，不像你，做了亏心事还怕人查。"</p>
+    <p class="dialogue">江澈挡在林薇身前，说："赵峰，这里是公司，不是你撒野的地方！"</p>
+    <p class="dialogue">赵峰挥手让口罩男 陈默上前："公司是我的！我想怎么样就怎么样！今天我就要把你们这对狗男女赶出去！"</p>
+    <p class="dialogue">林薇掏出手机，开口道："你敢动一下，我就报警。你挪用公款、故意伤害的证据，我已经备份好了，足够你坐十年牢。"</p>
+    <p class="dialogue">赵峰脸色发白："你吓唬我？我就不信警察会信你这个重生的疯子！"</p>
+    <p class="dialogue">江澈攥住冲上前的口罩男 陈默手腕，说道："她没吓唬你。我们已经把证据交给了纪检部门，现在就等他们来调查。你以为你那些手段，还能瞒多久？"</p>
+    <p class="dialogue">赵峰后退："不可能！你们怎么会有这么多证据？"</p>
+    <p class="dialogue">林薇嘴角微微上扬，却没有一丝温度到达眼底："要想人不知，除非己莫为。前世你能掩盖真相，这一世，我会让你所有的罪行都暴露在阳光下！"</p>
+    <p class="dialogue">赵峰嘶吼，道："我不会放过你们的！我做鬼也不会放过你们！我们走！"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-6" data-chapter="6">
+  <div class="chapter-header">
+    <span class="chapter-number">第6章</span>
+    <h2 class="chapter-title">步步紧逼</h2>
+    <p class="chapter-scene">📍 街角咖啡馆</p>
+  </div>
+  <div class="chapter-content">
+    <p>咖啡馆的风铃在微风中轻轻摇曳，发出清脆悦耳的声响。角落里的绿植在阳光下舒展着叶片。</p>
+    <p>林薇和江澈正在商量下一步计划，赵峰突然出现，坐在他们对面。</p>
+    <p class="dialogue">赵峰阴笑："你们以为找到点证据就能扳倒我？太天真了。"</p>
+    <p class="dialogue">林薇微微挑起眉梢，目光中带着几分玩味，开口道："那你倒是说说，你还有什么后手？"</p>
+    <p class="dialogue">赵峰掏出照片："你们闪婚的事，我已经告诉董事会了。林薇，你一个外人，凭什么插手星辰公司的事？还有你，江澈，为了夺回公司，竟然嫁给一个女人，你不觉得丢人吗？"</p>
+    <p class="dialogue">江澈脸色一冷，说道："我不觉得丢人，能和林薇合作，能报仇雪恨，我心甘情愿。"</p>
+    <p class="dialogue">林薇拿起照片："就凭这个？赵峰，你也太没本事了。董事会更在意的是公司的利益，只要我们能证明你侵吞资产，你迟早会被踢出去。"</p>
+    <p class="dialogue">赵峰咬牙："你们别得意！我已经联系了海外的合作伙伴，只要我把公司核心技术交出去，他们就会帮我打压你们！"</p>
+    <p class="dialogue">林薇轻轻摇了摇头，道："你以为我们没防备？你联系的合作伙伴，已经被我们提前沟通好了，他们不会帮你这个罪犯的。"</p>
+    <p class="dialogue">江澈补充，说："而且我们已经查到，你和海外黑帮有勾结，用公司资金洗钱，这些证据，我们也会一并交给警方。"</p>
+    <p class="dialogue">赵峰拍桌："你们简直是疯了！林薇，江澈，你们给我等着，我会让你们付出惨痛的代价！"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-7" data-chapter="7">
+  <div class="chapter-header">
+    <span class="chapter-number">第7章</span>
+    <h2 class="chapter-title">心动的萌芽</h2>
+    <p class="chapter-scene">📍 出租屋（ ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>出租屋里弥漫着淡淡的咖啡香气，台灯投下温暖的光圈。</p>
+    <p>林薇坐在沙发上发呆，江澈端来杯子。</p>
+    <p class="dialogue">江澈轻声："在想什么？"</p>
+    <p class="dialogue">林薇抬头，说道："我在想前世，那天如果我没去公司加班，是不是就不会被赵峰算计。"</p>
+    <p class="dialogue">江澈坐在她身边："别再想了，都过去了。这一世，我会保护你，不会再让你陷入危险。"</p>
+    <p class="dialogue">林薇沉默："你为什么要对我这么好？我们只是盟友。"</p>
+    <p class="dialogue">江澈伸出手，轻轻握住了她的手，指尖传来的温度让两人都微微一怔，道："因为我爱你。从第一次见你，我就爱上你了。前世没能说出口，这一世，我不想再错过。"</p>
+    <p class="dialogue">林薇抽回手，说："你别再说这种话了，我们之间不可能。"</p>
+    <p class="dialogue">江澈眼眶渐渐泛红，有什么东西在眼底翻涌："为什么不可能？是因为我前世的懦弱？还是因为你还在恨我？"</p>
+    <p class="dialogue">林薇轻轻点了点头，开口道："都是。我无法忘记前世的痛苦，也无法原谅你的沉默。"</p>
+    <p class="dialogue">江澈张开双臂，将她紧紧拥入怀中："我知道我错了，我愿意用一辈子来弥补。林薇，给我一次机会，好不好？"</p>
+    <p class="dialogue">林薇挣扎着推开他，说道："我需要时间，现在我只想复仇。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-8" data-chapter="8">
+  <div class="chapter-header">
+    <span class="chapter-number">第8章</span>
+    <h2 class="chapter-title">董事会风云</h2>
+    <p class="chapter-scene">📍 星辰公司办公室（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>会议室里灯光明亮，投影仪的蓝光映在每个人的脸上，气氛既紧张又充满期待。</p>
+    <p>🚀 短剧公司收购方案（40秒速讲版）</p>
+    <p class="dialogue">"用"三维赋能公式"打动对方决策者——"核心逻辑的声音响起。</p>
+    <p class="dialogue">1️⃣ 产能升级道："注入千万级拍摄基地+AI智能分镜系统，单月产能从15集跃升至50集"</p>
+    <p class="dialogue">2️⃣ 渠道变现说："共享我们覆盖300+下沉市场的私域流量池，历史案例证明可提升付费转化率27%"</p>
+    <p class="dialogue">"开放头部网文IP改编权，前3个项目保底分成比例提高至45%"3️⃣ IP孵化的声音响起。</p>
+    <p>（结尾15秒冲刺话术）</p>
+    <p class="dialogue">"原团队保留核心创作权，3年业绩达标额外获得上市公司股权激励。明天上午10点，我们带着定制化尽调清单等你——与其单打独斗，不如一起把短剧做成现象级生意。""现在签约可享'黄金降落伞'条款的声音响起。</p>
+    <p>打断视频会议。</p>
+    <p class="dialogue">赵峰大声："各位董事，我有重要的事情要宣布！林薇是个骗子，她根本不是什么创业新人，她是重生回来复仇的疯子！"</p>
+    <p class="dialogue">林薇冷静："赵峰，你少在这里胡说八道。我是不是骗子，大家自有判断。"</p>
+    <p class="dialogue">江澈起身，道："赵峰，你扰乱公司秩序，已经违反了公司章程。请你立刻离开！"</p>
+    <p class="dialogue">赵峰嘴角微微上扬，却没有一丝温度到达眼底，说："我离开？我要让大家都知道，林薇接近你们，就是为了报复我，她根本不在乎公司的利益！"</p>
+    <p class="dialogue">林薇看向董事："各位董事，我承认我和赵峰有私人恩怨，但我对公司的规划和诚意，大家都看在眼里。赵峰侵吞公司资产，才是真正损害公司利益的人。"</p>
+    <p class="dialogue">江澈递上证据，开口道："这是赵峰近一年的资金流水，上面清楚地显示他把公司资金转移到了私人账户。还有他伪造合同、欺骗客户的证据，我们都已经整理好了。"</p>
+    <p class="dialogue">赵峰慌了神："这都是伪造的！是他们合起伙来陷害我！"</p>
+    <p class="dialogue">董事甲眉头微微蹙起，说道："赵峰，这些证据看起来很真实，我们会安排专业人员核查。在核查结果出来之前，你暂时停职。"</p>
+    <p class="dialogue">赵峰嘶吼："你们不能这样对我！公司是我的！"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-9" data-chapter="9">
+  <div class="chapter-header">
+    <span class="chapter-number">第9章</span>
+    <h2 class="chapter-title">疯狂的报复</h2>
+    <p class="chapter-scene">📍 街角咖啡馆（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>街角的咖啡馆里飘着浓郁的咖啡香，爵士乐从老式音响里悠悠流出，午后的阳光透过玻璃窗，温柔地洒在木质桌面上。</p>
+    <p>林薇和江澈庆祝赵峰停职，赵峰突然冲进来，一把揪住林薇的衣领。</p>
+    <p class="dialogue">赵峰面目扭曲，声音几乎是从喉咙深处挤出来的，道："都是你！都是你毁了我的一切！"</p>
+    <p class="dialogue">江澈立刻拉开他，一拳砸在他脸上，说："你敢动她一下试试！"</p>
+    <p class="dialogue">赵峰捂着脸："江澈，你这个叛徒！当初要不是我帮你，你根本进不了公司！"</p>
+    <p class="dialogue">江澈嘴角微微上扬，却没有一丝温度到达眼底，开口道："帮我？你是想利用我父亲的关系吧！你从一开始就没安好心，侵吞公司，害死林薇，你才是真正的叛徒！"</p>
+    <p class="dialogue">林薇整理衣领："赵峰，你现在停职了，很快就会面临法律的制裁。你所做的一切，都是咎由自取。"</p>
+    <p class="dialogue">赵峰疯笑，说道："咎由自取？我不甘心！我为公司付出了这么多，凭什么要输给你们这对狗男女！"</p>
+    <p class="dialogue">林薇眼神冰冷："你付出的？你付出的都是算计和阴谋！前世你害死我，这一世你又想毁了江澈和公司，你根本不配谈付出！"</p>
+    <p class="dialogue">江澈拉住林薇："别跟他废话了，警察马上就到。"</p>
+    <p class="dialogue">赵峰挣扎，道："我不会跟你们走的！我要杀了你们！"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-10" data-chapter="10">
+  <div class="chapter-header">
+    <span class="chapter-number">第10章</span>
+    <h2 class="chapter-title">复仇终章</h2>
+    <p class="chapter-scene">📍 出租屋（ ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>出租屋的墙壁上贴满了公司调查的资料，灯光下，两个人的身影紧紧相依。</p>
+    <p>林薇看着窗外，江澈坐在一旁。</p>
+    <p class="dialogue">江澈轻声："赵峰被警察带走了，他的罪行也都交代了。"</p>
+    <p class="dialogue">林薇轻轻点了点头，开口道："终于……结束了。"</p>
+    <p class="dialogue">江澈伸出手，轻轻握住了她的手，指尖传来的温度让两人都微微一怔："林薇，复仇完成了，你接下来想做什么？"</p>
+    <p class="dialogue">林薇回头看他，说道："我不知道。前世的恩怨了结了，但我心里还是空落落的。"</p>
+    <p class="dialogue">江澈认真："那就让我陪着你。我们可以一起打理公司，一起过平静的生活。"</p>
+    <p class="dialogue">林薇犹豫："我们之间，真的可以吗？"</p>
+    <p class="dialogue">江澈轻轻点了点头，道："可以。我知道我前世欠你太多，但我会用一辈子来弥补。林薇，嫁给我，不是合作，不是契约，是真心实意地想和你过一辈子。"</p>
+    <p class="dialogue">林薇眼眶渐渐泛红，有什么东西在眼底翻涌，说："你为什么这么执着？"</p>
+    <p class="dialogue">江澈嘴角微微上扬，眼底浮现出温柔的光芒："因为你值得。从第一次见你，我就知道，你是我这辈子唯一想守护的人。"</p>
+    <p class="dialogue">林薇沉默片刻，点头，开口道："好，我答应你。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-11" data-chapter="11">
+  <div class="chapter-header">
+    <span class="chapter-number">第11章</span>
+    <h2 class="chapter-title">迟来的忏悔</h2>
+    <p class="chapter-scene">📍 星辰公司办公室（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>阳光透过百叶窗在办公桌上画出一道道金色的条纹，星辰公司的logo在玻璃门上熠熠生辉。</p>
+    <p>林薇和江澈正在讨论公司未来规划，赵峰的律师突然打电话</p>
+    <p class="dialogue">律师说道："林总，江总，这是赵峰委托我想向你们忏悔，他希望你们能原谅他。"</p>
+    <p class="dialogue">"原谅他？他害死我前世的孩子，毁了我的人生，这种伤害怎么可能原谅？"林薇的声音响起。</p>
+    <p class="dialogue">江澈眉头微微蹙起："让他在监狱里好好反省吧，我们不需要他的忏悔。"</p>
+    <p class="dialogue">律师长长地叹了一口气，道："赵峰知道自己错了，他说愿意把自己名下所有财产都转给你们，作为补偿。"</p>
+    <p class="dialogue">林薇轻轻摇了摇头，说："我们不需要他的财产。我们要的，是他受到应有的惩罚，是正义得到伸张。"</p>
+    <p class="dialogue">江澈补充："告诉赵峰，好好改造，别再想着投机取巧。他欠我们的，不是财产能还清的。"</p>
+    <p class="dialogue">律师轻轻点了点头，开口道："我会转告他的。"</p>
+    <p class="dialogue">林薇看着律师离开："其实，我现在已经不恨他了，只是无法原谅。"</p>
+    <p class="dialogue">江澈伸出手，轻轻握住了她的手，指尖传来的温度让两人都微微一怔，说道："没关系，不用强迫自己。我会一直陪着你，直到你真正放下。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-12" data-chapter="12">
+  <div class="chapter-header">
+    <span class="chapter-number">第12章</span>
+    <h2 class="chapter-title">最后的疯狂</h2>
+    <p class="chapter-scene">📍 街角咖啡馆（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>咖啡馆外下着淅淅沥沥的小雨，雨滴顺着玻璃窗蜿蜒而下，模糊了窗外的城市轮廓。</p>
+    <p>林薇和江澈正在挑选婚礼场地，赵峰的口罩男 陈默突然出现。</p>
+    <p class="dialogue">口罩男 陈默阴狠："林薇，江澈，你们别得意太早！赵峰虽然进去了，但我不会放过你们！"</p>
+    <p class="dialogue">林薇冷静，道："你们想干什么？"</p>
+    <p class="dialogue">口罩男 陈默掏出刀，说："干什么？当然是为赵峰报仇！你们害他身败名裂，我要让你们付出代价！"</p>
+    <p class="dialogue">江澈立刻挡在林薇身前："有我在，你别想伤害她！"</p>
+    <p class="dialogue">口罩男 陈默挥刀上前，开口道："那就先杀了你！"</p>
+    <p class="dialogue">林薇大喊："帽子叔叔"</p>
+    <p class="dialogue">口罩男 陈默愣了一下，说道："敢耍我？"</p>
+    <p class="dialogue">江澈趁机夺下他的刀："收手吧，我们就不用叫帽子叔叔了"</p>
+    <p class="dialogue">口罩男 陈默瘫坐在地："不……我不想坐牢！"</p>
+    <p class="dialogue">林薇长长地叹了一口气，道："你跟着赵峰做了那么多坏事，早就该想到会有今天。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-13" data-chapter="13">
+  <div class="chapter-header">
+    <span class="chapter-number">第13章</span>
+    <h2 class="chapter-title">劫后余温</h2>
+    <p class="chapter-scene">📍 出租屋（ ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>夜色渐深，出租屋里只有台灯散发着柔和的光芒，将两人的影子拉得很长。</p>
+    <p>林薇和江澈坐在沙发上 江给林梳头</p>
+    <p class="dialogue">江澈心疼："今天吓坏了吧？"</p>
+    <p class="dialogue">林薇轻轻摇了摇头，开口道："没有，因为我知道你会保护我。"</p>
+    <p class="dialogue">江澈张开双臂，将她紧紧拥入怀中："以后再也不会让你遇到这种危险了。婚礼结束后，我们去度蜜月，远离这些是非。"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒，说道："好。对了，公司的新业务计划，你觉得可行吗？"</p>
+    <p class="dialogue">江澈轻轻点了点头："可行。不过我们要谨慎，不能再出任何差错。"</p>
+    <p class="dialogue">林薇靠在他肩上："差错？你会有差错的时候？"</p>
+    <p>江撤把林薇按在床上，热吻（借位）</p>
+    <p class="dialogue">江澈低头吻她，说："林薇，我爱你。"</p>
+    <p class="dialogue">林薇回吻他："我也爱你。"</p>
+    <p>二人蒙住被子</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-14" data-chapter="14">
+  <div class="chapter-header">
+    <span class="chapter-number">第14章</span>
+    <h2 class="chapter-title">跨越时空的婚纱照</h2>
+    <p class="chapter-scene">📍 星辰公司办公室（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>办公室里的空调嗡嗡作响，窗外的车流声隐约可闻。会议桌上摊开着厚厚的文件。</p>
+    <p>林薇正在签署文件，江澈走进来，递上一份礼物。</p>
+    <p>江撤在玩手机，笑</p>
+    <p class="dialogue">"过来，给你看个好玩的。"江澈的声音响起。</p>
+    <p class="dialogue">林薇打开，惊讶："ai？这是……我们前世没来得及拍的婚纱照？"</p>
+    <p>Ai生成二人婚纱照。</p>
+    <p class="dialogue">江澈轻轻点了点头，说："是啊。前世没能给你一场正式的婚礼，这一世，我想弥补你。"</p>
+    <p>用哪一世的照片</p>
+    <p>管他哪一世，新娘是你是婚纱照！</p>
+    <p class="dialogue">林薇眼眶渐渐泛红，有什么东西在眼底翻涌："谢谢你，江澈。"</p>
+    <p class="dialogue">江澈伸出手，轻轻握住了她的手，指尖传来的温度让两人都微微一怔，说道："应该说谢谢的是我，谢谢你给我机会，让我能弥补前世的过错。"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒："过去的就让它过去吧，我们要好好珍惜现在。"</p>
+    <p class="dialogue">江澈轻轻点了点头："嗯。对了，董事会已经收到了我们的结婚申请，他们还想参加我们的婚礼。"</p>
+    <p class="dialogue">林薇惊讶，道："真的？那太好了。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-15" data-chapter="15">
+  <div class="chapter-header">
+    <span class="chapter-number">第15章</span>
+    <h2 class="chapter-title">街头偶遇</h2>
+    <p class="chapter-scene">📍 街角咖啡馆（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>傍晚的咖啡馆里，暖黄色的灯光为一切都镀上了一层柔和的光晕。窗外的行人匆匆而过，馆内却是一片宁静。</p>
+    <p>林薇和江澈正在和婚礼策划师沟通，赵峰突然被警察押着路过，看到他们，疯狂嘶吼。</p>
+    <p class="dialogue">赵峰面目扭曲，声音几乎是从喉咙深处挤出来的："林薇！你不能嫁给他！他就是个骗子！当年他根本就没尽力救你！"</p>
+    <p class="dialogue">江澈握紧林薇的手，开口道："别理他，他就是不甘心。"</p>
+    <p class="dialogue">林薇看着赵峰被押走："我知道。其实，我挺同情他的，如果他当初能走正途，也不会落得今天这个下场。"</p>
+    <p class="dialogue">江澈轻轻点了点头，说道："是啊。但路是他自己选的，后果也该由他自己承担。"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒："我们别想他了，还是说说婚礼的细节吧。我想在海边举办婚礼，你觉得怎么样？"</p>
+    <p class="dialogue">江澈轻轻点了点头："好，都听你的。你喜欢就好。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-16" data-chapter="16">
+  <div class="chapter-header">
+    <span class="chapter-number">第16章</span>
+    <h2 class="chapter-title">白纱之约</h2>
+    <p class="chapter-scene">📍 出租屋（ ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>窗外的霓虹灯光透过轻纱窗帘，在狭小的出租屋里投下斑驳的光影。</p>
+    <p>林薇正在戴白色头纱</p>
+    <p class="dialogue">江澈赞叹，说："你真漂亮。"</p>
+    <p class="dialogue">林薇脸红："真的吗？"</p>
+    <p class="dialogue">江澈走上前，抱住她，开口道："当然是真的。能娶到你，是我这辈子最大的幸运。"</p>
+    <p class="dialogue">林薇靠在他怀里："能遇到你，也是我这辈子最大的幸运。"</p>
+    <p class="dialogue">江澈低头吻她，说道："婚礼那天，我会给你一个难忘的仪式。"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒："我相信你。对了，你准备什么时候告诉叔叔阿姨我们结婚的事？"</p>
+    <p class="dialogue">江澈轻轻点了点头："我已经告诉他们了，他们很开心，还说要过来参加我们的婚礼。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-17" data-chapter="17">
+  <div class="chapter-header">
+    <span class="chapter-number">第17章</span>
+    <h2 class="chapter-title">最后一面</h2>
+    <p class="chapter-scene">📍 公司</p>
+  </div>
+  <div class="chapter-content">
+    <p>公司大厅里人来人往，每个人脸上都带着忙碌而专注的神情。</p>
+    <p>林薇和江澈正在处理公司事务，突然接到警方电话。</p>
+    <p>喂，您好，我是赵峰的律师，他现在突发恶疾，想再见您和您的丈夫一面</p>
+    <p class="dialogue">林薇接电话："喂？"</p>
+    <p class="dialogue">江澈担忧，开口道："怎么了？"</p>
+    <p class="dialogue">林薇长长地叹了一口气："赵峰在狱中突发重病，警方让我们去看看他。"</p>
+    <p class="dialogue">江澈眉头微微蹙起，说道："我们还要去看他吗？"</p>
+    <p class="dialogue">林薇轻轻点了点头："去吧。毕竟他是我们前世的仇人，这一世的恩怨也该有个了结。"</p>
+    <p class="dialogue">"行，我这边还有两个项目要谈，就不和你一块去了"江澈的声音响起。</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-18" data-chapter="18">
+  <div class="chapter-header">
+    <span class="chapter-number">第18章</span>
+    <h2 class="chapter-title">释怀</h2>
+    <p class="chapter-scene">📍 街角咖啡馆（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>咖啡馆的风铃在微风中轻轻摇曳，发出清脆悦耳的声响。角落里的绿植在阳光下舒展着叶片。</p>
+    <p class="dialogue">路边道："赵峰画外音：林薇，谢谢你来看我，人之将死，其言也善，对不起林薇，我应该叫你王薇，上一世是我欠你们太多，这一世，就让我用金钱来偿还，我只求你们每年能给我扫扫墓，替我给我爸妈扫扫墓。"</p>
+    <p class="dialogue">江澈担忧，说："他对你说了什么？"</p>
+    <p class="dialogue">林薇轻轻摇了摇头："没说什么，只是跟我道歉了。他说他后悔了，不该害我，不该抢公司。"</p>
+    <p class="dialogue">江澈长长地叹了一口气，开口道："现在说这些都晚了。"</p>
+    <p class="dialogue">林薇轻轻点了点头："是啊。但我还是原谅他了，毕竟仇恨只会让自己痛苦。"</p>
+    <p class="dialogue">江澈伸出手，轻轻握住了她的手，指尖传来的温度让两人都微微一怔，说道："你能放下就好。以后我们就过平静的生活，再也不提这些不愉快的事了。"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒："嗯。对了，我想和你旅行婚礼，不想打扰任何人，也不想被打扰"</p>
+    <p class="dialogue">"行，都听你的"江澈的声音响起。</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-19" data-chapter="19">
+  <div class="chapter-header">
+    <span class="chapter-number">第19章</span>
+    <h2 class="chapter-title">意外的访客</h2>
+    <p class="chapter-scene">📍 出租屋（ ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>阳光透过窗帘的缝隙洒进来，出租屋虽然不大，却因为两个人的存在而显得温馨。</p>
+    <p>林薇和江澈正在打扫家里，突然听到敲门声。</p>
+    <p class="dialogue">江澈开门，惊讶，说："是你？"</p>
+    <p class="dialogue">赵峰的口罩男 陈默低头："我是来道歉的。之前我不该听赵峰的话，伤害你们。"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒，开口道："没关系，只要你以后能走正途就好。"</p>
+    <p class="dialogue">口罩男 陈默递上一个盒子："这是赵峰让我转交给你的，他说这是他唯一能为你做的事。低头递日记盒时，沈瑶出现在他身后："林薇姐，我也来了。赵峰入狱前让我转交这个。"任一道具"</p>
+    <p class="dialogue">林薇打开盒子，惊讶，说道："这是……我前世的日记？"</p>
+    <p class="dialogue">口罩男 陈默轻轻点了点头："是啊。赵峰说，他一直保存着，现在该还给你了。"</p>
+    <p class="dialogue">江澈握住林薇的手："别难过，都过去了。"</p>
+    <p class="dialogue">林薇轻轻摇了摇头，道："我不难过，只是觉得很感慨。"</p>
+    <p class="dialogue">江澈对林薇低语说：""赵峰最疼这个表妹，却让她跟着陈默这种人...有意思。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-20" data-chapter="20">
+  <div class="chapter-header">
+    <span class="chapter-number">第20章</span>
+    <h2 class="chapter-title">星辰新篇</h2>
+    <p class="chapter-scene">📍 星辰公司办公室（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>会议室里灯光明亮，投影仪的蓝光映在每个人的脸上，气氛既紧张又充满期待。</p>
+    <p>林薇和江澈开会介绍公司项目，</p>
+    <p class="dialogue">项目介绍词一开口道："《都市奇谭》系列"</p>
+    <p class="dialogue">"5分钟/集的单元式悬疑短剧，聚焦都市人身边的"非日常"故事"核心定位的声音响起。</p>
+    <p>亮点拆解：</p>
+    <p class="dialogue">"每集独立案件+长线伏笔，前30秒必现"反套路反转""强情节的声音响起。</p>
+    <p class="dialogue">"赛博朋克色调混搭市井烟火气，手机竖屏/横屏双版本适配"视觉风格的声音响起。</p>
+    <p class="dialogue">商业价值道："已签约3个城市文旅IP植入，单集冠名招商目标50万"</p>
+    <p>（结尾40秒卡点）</p>
+    <p class="dialogue">"当午夜12点的钟声敲响，你手机里的第28个APP突然亮起——下一个故事，正在你的城市发生。《都市奇谭》，2026年Q1全网开播，现在加入我们的创作联盟，让每个擦肩而过的陌生人，都成为主角。"</p>
+    <p>今天会议就到这里吧</p>
+    <p class="dialogue">"林总，江总，你们新婚快乐，送一们一座小岛吧，"董事的声音响起。</p>
+    <p class="dialogue">林薇惊讶，说道："真的吗"</p>
+    <p class="dialogue">"谢谢董事。"江澈的声音响起。</p>
+    <p class="dialogue">董事嘴角微微上扬，眼底浮现出温柔的光芒："其实，我们早就知道赵峰的阴谋了，只是一直没有证据。多亏了你们，才能把他绳之以法，保住公司。"</p>
+    <p class="dialogue">林薇轻轻点了点头，道："这都是我们应该做的。"</p>
+    <p class="dialogue">江澈补充，说："以后我们会好好打理公司，不辜负各位董事的信任。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-21" data-chapter="21">
+  <div class="chapter-header">
+    <span class="chapter-number">第21章</span>
+    <h2 class="chapter-title">冰释前嫌</h2>
+    <p class="chapter-scene">📍 街角咖啡馆（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>街角的咖啡馆里飘着浓郁的咖啡香，爵士乐从老式音响里悠悠流出，午后的阳光透过玻璃窗，温柔地洒在木质桌面上。</p>
+    <p>林薇和江澈正在和摄影师沟通婚礼拍摄细节，突然看到沈瑶（原沈瑶，改为赵峰的远房表妹，青年人）。</p>
+    <p class="dialogue">沈瑶走上前，开口道："林薇姐，江澈哥，恭喜你们结婚。"</p>
+    <p class="dialogue">林薇惊讶："赵峰的表妹？你怎么来了？"</p>
+    <p class="dialogue">沈瑶嘴角微微上扬，眼底浮现出温柔的光芒，说道："我这次回国，是给赵峰处理后事的，听说i你们结婚了，恭喜啊。之前我被赵峰误导，说了一些伤害你们的话，希望你们能原谅我。"</p>
+    <p class="dialogue">林薇轻轻摇了摇头："没关系，我们知道你不是故意的。"</p>
+    <p class="dialogue">江澈轻轻点了点头："以后有空常联系。"</p>
+    <p class="dialogue">沈瑶递上礼物，道："这是我的一点心意，祝你们新婚快乐。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-22" data-chapter="22">
+  <div class="chapter-header">
+    <span class="chapter-number">第22章</span>
+    <h2 class="chapter-title">前世的真相</h2>
+    <p class="chapter-scene">📍 出租屋（ ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>出租屋里弥漫着淡淡的咖啡香气，台灯投下温暖的光圈。</p>
+    <p>林薇和江澈正在看婚礼流程，播放婚礼进行曲，江澈突然开口。</p>
+    <p class="dialogue">江澈认真："林薇，我想跟你说件事。"</p>
+    <p class="dialogue">林薇抬头，开口道："什么事？"</p>
+    <p class="dialogue">江澈伸出手，轻轻握住了她的手，指尖传来的温度让两人都微微一怔："前世，我其实早就知道赵峰要对你不利，我想救你，但被他软禁了。我一直很愧疚，没能保护好你。"</p>
+    <p class="dialogue">林薇轻轻点了点头，说道："我知道。其实，我早就不怪你了。"</p>
+    <p class="dialogue">江澈眼眶渐渐泛红，有什么东西在眼底翻涌："真的吗？"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒："真的。在你一次次为我挡危险、帮我查证据的时候，我就知道，你是真心想弥补我。"</p>
+    <p class="dialogue">江澈张开双臂，将她紧紧拥入怀中，道："谢谢你，林薇。我会一辈子对你好，再也不会让你受委屈。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-23" data-chapter="23">
+  <div class="chapter-header">
+    <span class="chapter-number">第23章</span>
+    <h2 class="chapter-title">婚礼前夕</h2>
+    <p class="chapter-scene">📍 星辰公司办公室（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>阳光透过百叶窗在办公桌上画出一道道金色的条纹，星辰公司的logo在玻璃门上熠熠生辉。</p>
+    <p>林薇正在处理工作，江澈走进来，递给她一杯咖啡。</p>
+    <p class="dialogue">江澈笑着："累了吧？休息一下。"</p>
+    <p class="dialogue">林薇接过咖啡，开口道："谢谢。对了，婚礼的场地都布置好了吗？"</p>
+    <p class="dialogue">江澈轻轻点了点头："都布置好了，就等明天了。"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒，说道："太好了。我有点紧张。"</p>
+    <p class="dialogue">江澈伸出手，轻轻握住了她的手，指尖传来的温度让两人都微微一怔："别紧张，有我在。明天你就是最美的新娘。"</p>
+    <p class="dialogue">林薇轻轻点了点头："嗯。对了，你爸妈明天会来吗？"</p>
+    <p class="dialogue">江澈轻轻点了点头，道："会的，他们已经在路上了。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-24" data-chapter="24">
+  <div class="chapter-header">
+    <span class="chapter-number">第24章</span>
+    <h2 class="chapter-title">温暖的祝福</h2>
+    <p class="chapter-scene">📍 街角咖啡馆（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>咖啡馆外下着淅淅沥沥的小雨，雨滴顺着玻璃窗蜿蜒而下，模糊了窗外的城市轮廓。</p>
+    <p>林薇和江澈正在和赵峰表妹一起吃饭，其乐融融。</p>
+    <p class="dialogue">赵峰表妹递上红包："这是我们的一点心意，祝你们新婚快乐。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-25" data-chapter="25">
+  <div class="chapter-header">
+    <span class="chapter-number">第25章</span>
+    <h2 class="chapter-title">新的启程</h2>
+    <p class="chapter-scene">📍 出租屋（ ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>出租屋的墙壁上贴满了公司调查的资料，灯光下，两个人的身影紧紧相依。</p>
+    <p>林薇和江澈正在打包行李，准备去度蜜月。</p>
+    <p>（聊天去哪玩，自由发挥）</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒，说道："真没想到，我们能走到今天。"</p>
+    <p class="dialogue">江澈伸出手，轻轻握住了她的手，指尖传来的温度让两人都微微一怔："我一直相信，我们会幸福的。前世的遗憾，这一世都弥补了。"</p>
+    <p class="dialogue">林薇轻轻点了点头："是啊，复仇完成了，还有了你。"</p>
+    <p class="dialogue">江澈低头吻她，道："林薇，我爱你。"</p>
+    <p class="dialogue">林薇回吻他，说："我也爱你。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-26" data-chapter="26">
+  <div class="chapter-header">
+    <span class="chapter-number">第26章</span>
+    <h2 class="chapter-title">敬所有来得及的人</h2>
+    <p class="chapter-scene">📍 公司</p>
+  </div>
+  <div class="chapter-content">
+    <p>公司走廊里的脚步声此起彼伏，忙碌的氛围中透着一丝温暖的人情味。</p>
+    <p>林薇和江澈正在和朋友们告别，准备去度蜜月。</p>
+    <p class="dialogue">口罩男 陈默笑着，开口道："苏总，江总，祝你们新婚快乐，度蜜月愉快！"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒："谢谢大家，这段时间辛苦你们了。"</p>
+    <p class="dialogue">江澈轻轻点了点头，说道："公司的事就拜托大家了，我们会尽快回来的。"</p>
+    <p class="dialogue">赵表妹挥手："祝你们永结同心，白头偕老！"</p>
+    <p class="dialogue">""我要去支教了，这是我地址。"陈默捏紧信封，口罩下声音沙哑：铺警笛，"等我出来（刑满释放），去找你。""沈瑶将信封塞给陈默的声音响起。</p>
+    <p class="dialogue">沈瑶踮脚替他理好褶皱衣领道：""别再戴口罩了，你眼睛很好看。"陈默摘口罩两人拥抱"</p>
+    <p class="dialogue">主线融合说："江澈举杯望向两人："敬所有'来得及'的人。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-27" data-chapter="27">
+  <div class="chapter-header">
+    <span class="chapter-number">第27章</span>
+    <h2 class="chapter-title">好消息</h2>
+    <p class="chapter-scene">📍 街角咖啡馆（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>傍晚的咖啡馆里，暖黄色的灯光为一切都镀上了一层柔和的光晕。窗外的行人匆匆而过，馆内却是一片宁静。</p>
+    <p>林薇和江澈正在等待车，突然接到警方电话。</p>
+    <p class="dialogue">林薇接电话，开口道："喂？……好，我知道了，谢谢。（挂电话）"</p>
+    <p class="dialogue">江澈担忧："怎么了？"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒，说道："赵峰在狱中表现良好，获得了减刑。而且他的病是误诊"</p>
+    <p class="dialogue">江澈轻轻点了点头："那就好。希望他以后能改过自新。"</p>
+    <p class="dialogue">林薇轻轻点了点头："嗯。我们别想他了，好好享受我们的蜜月吧。"</p>
+    <p class="dialogue">江澈轻轻点了点头，道："好。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-28" data-chapter="28">
+  <div class="chapter-header">
+    <span class="chapter-number">第28章</span>
+    <h2 class="chapter-title">归来</h2>
+    <p class="chapter-scene">📍 出租屋（ ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>夜色渐深，出租屋里只有台灯散发着柔和的光芒，将两人的影子拉得很长。</p>
+    <p>林薇和江澈度蜜月回来，坐在沙发上。</p>
+    <p class="dialogue">江澈嘴角微微上扬，眼底浮现出温柔的光芒："这次蜜月开心吗？"</p>
+    <p class="dialogue">林薇轻轻点了点头，开口道："开心。谢谢你带我去这么美的地方。"</p>
+    <p class="dialogue">江澈张开双臂，将她紧紧拥入怀中："只要你开心就好。"</p>
+    <p class="dialogue">林薇靠在他怀里，说道："以后我们每年都去度蜜月，好不好？"</p>
+    <p class="dialogue">江澈轻轻点了点头："好，都听你的。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-29" data-chapter="29">
+  <div class="chapter-header">
+    <span class="chapter-number">第29章</span>
+    <h2 class="chapter-title">幸福的延续</h2>
+    <p class="chapter-scene">📍 星辰公司办公室（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>星辰公司的落地窗外，城市的天际线在晨光中渐渐清晰。宽敞的办公室里，空气中还残留着清晨的凉意。</p>
+    <p>林薇和江澈正在讨论公司新业务，突然接到沈瑶的电话。</p>
+    <p class="dialogue">林薇接电话，道："喂？……真的吗？太好了！（挂电话）"</p>
+    <p class="dialogue">江澈担忧，说："怎么了？"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒："沈瑶说，她要结婚了，邀请我们去参加她的婚礼。"</p>
+    <p class="dialogue">江澈轻轻点了点头，开口道："太好了，真心祝福她。"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒："是啊。没想到，我们都能找到自己的幸福。"</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+
+<section class="chapter-section fade-in" id="chapter-30" data-chapter="30">
+  <div class="chapter-header">
+    <span class="chapter-number">第30章</span>
+    <h2 class="chapter-title">阳光正好</h2>
+    <p class="chapter-scene">📍 街角咖啡馆（  ）</p>
+  </div>
+  <div class="chapter-content">
+    <p>咖啡馆的风铃在微风中轻轻摇曳，发出清脆悦耳的声响。角落里的绿植在阳光下舒展着叶片。</p>
+    <p>林薇和江澈坐在咖啡馆里，看着窗外的风景。</p>
+    <p class="dialogue">林薇感慨："真没想到，我们能走到今天。"</p>
+    <p class="dialogue">江澈伸出手，轻轻握住了她的手，指尖传来的温度让两人都微微一怔："我一直相信，正义不会缺席，幸福也不会缺席。"</p>
+    <p class="dialogue">林薇嘴角微微上扬，眼底浮现出温柔的光芒，道："是啊。前世的恩怨彻底了结了，今生的幸福正式开启了。"</p>
+    <p class="dialogue">江澈低头吻她，说："林薇，我爱你，一辈子都爱你。"</p>
+    <p class="dialogue">林薇回吻他："我也爱你，江澈。"</p>
+    <p class="dialogue">江澈微微挑起眉梢，目光中带着几分玩味，开口道："对了，你还记得我们的约定吗？我永远是你的“小狼狗”。"</p>
+    <p class="dialogue">林薇笑："记得，我的“小狼狗”老公。"</p>
+    <p>两人相视而笑，阳光洒在他们身上，温暖而美好。</p>
+  </div>
+  <div class="chapter-end"><span class="chapter-end-line"></span></div>
+</section>
+  </main>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="site-footer">
+    <div class="footer-logo">📖 重生闪婚：驯服年下盟友</div>
+    <p class="footer-text">
+      本故事纯属虚构，如有雷同纯属巧合<br>
+      © 2026 All Rights Reserved
+    </p>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="回到顶部">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>
